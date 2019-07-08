@@ -1,31 +1,90 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <nav id="nav" class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <!-- navbar items, navbar burger... -->
+        <a class="navbar-item" href="#">PORTFÓLIO {{ selected_lang }}</a>
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <a class="navbar-item" v-for="lang in lang_list" v-bind:key="lang" v-on:click="setLang(lang)"> {{lang}} </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="main-container">
+      <router-view/>
     </div>
-    <router-view/>
+    <footer>
+      <p> Made with <i class="fas fa-heart"></i> by <a href="//diogopassos.pt">DiogoPassos.pt</a></p>
+    </footer>
   </div>
 </template>
 
+
+<script>
+
+import Projects from '@/services/projects'
+import router from './router'
+
+var projects = new Projects();
+
+
+
+export default {
+  name: "app",
+  data: function () {
+    return {
+      selected_lang: ""
+    }
+  },
+  methods: {
+    setLang : function (lang) {
+      this.selected_lang = lang;
+      console.log("newlang", lang)
+      router.push('/')
+    }
+  },
+  created: function () {
+    this.lang_list = projects.getLangList();
+    this.selected_lang = this.lang_list[0];
+    
+  }
+}
+
+
+
+</script>
+
+
+
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+html {
+  overflow: hidden;
 }
-#nav {
-  padding: 30px;
+.main-container {
+  width: 100%;
+  height: calc(100vh - 108px);
+
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  height: 52px;
+
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+footer a {
+  text-decoration: none;
+  color: black;
 }
 </style>

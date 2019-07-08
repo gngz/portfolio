@@ -1,0 +1,16 @@
+{
+  "lang": "pt",
+  "lang_name": "portuguese",
+  "translations": {
+    "vmore": "Ver mais",
+    "name": "Nome",
+    "description": "Descrição",
+    "links": "Links"
+  },
+  "projects": [
+    {
+      "name": "Project 1",
+      "description": "markup body"
+    }
+  ]
+}

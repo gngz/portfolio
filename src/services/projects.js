@@ -1,24 +1,38 @@
 import ptLang from '../assets/projectsPT.json';
 import enLang from '../assets/projectsEN.json';
 
-export default class Projects {
-    
-    constructor () {
-        this.data = []
-        this.langs = []
-        this.data.push(enLang)
-        this.data.push(ptLang)
-        this.data.forEach(function (item) {
-            this.langs.push(item.lang)
+var data;
+var langs;
+
+export default {
+
+    init : function () {
+        data = []
+        langs = []
+        data.push(enLang)
+        data.push(ptLang)
+        data.forEach(function (item) {
+            langs.push(item.lang)
             
-        }.bind(this));
+        });
+    },
 
+    getLangList : function () {
+        return [...langs]
+    },
 
-        
-        
-    }
-   
-    getLangList() {
-        return [...this.langs]
+    getProjectsByLang: function (lang) {
+        return data.filter(data_item => data_item.lang == lang)[0].projects;
+    },
+
+    getProjectById: function (id,lang) {
+        var plist = this.getProjectsByLang(lang);
+
+        return plist[id];
+    },
+
+    getTranslations : function (lang) {
+        var lang_list  = data.filter(data_item => data_item.lang == lang)[0];
+        return lang_list.translations;
     }
 }

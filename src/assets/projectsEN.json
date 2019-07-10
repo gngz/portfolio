@@ -4,13 +4,58 @@
   "translations": {
     "vmore": "Ver mais",
     "name": "Nome",
-    "description": "Descrição",
-    "links": "Links"
+    "description": "Description",
+    "images": "Images",
+    "links": "Links",
+    "back" : "Go back"
   },
   "projects": [
     {
-      "name": "Project 1",
-      "description": "markup body"
+      "name": "Aladino Lamp",
+      "description": "AladinoLamp is a smart lamp with a temperature sensor and can be controlled by a smartphone or desktop through wifi.\r\n\r\n\r\n\r\n(Academic Project)\r\n\r\n\r\n\r\n**Technologies**\r\n\r\n\r\n\r\nC/C++, Java, Arduino, Android and IOs",
+      "links" : [{"url": "//aladinoslamp.eu.org/", "name" : "Project website" ,"type" : "link"},{"url": "//github.com/gngz/aladinoLamp", "name" : "GitHub Repository" ,"type" : "github"}],
+      "images" : [{"url": "/images/aladinolamp-circuit.jpg", "name":"Circuit"}]
+    },
+    {
+      "name": "24LC256-Arduino-Library",
+      "description": "Arduino Library for Microchip 24LC256 256Kbit I2C CMOS Serial EEPROM.\r\n\r\n\r\n\r\n**Technologies**\r\n\r\n\r\n\r\nC/C++ and Arduino\r\n\r\n\r\n\r\n",
+      "links" : [{"url": "//github.com/gngz/24LC256-Arduino-Library", "name" : "GitHub Repository" ,"type" : "github"}]
+    },
+    {
+      "name": "Tecniram Website",
+      "description": "The website of a computer services company.\r\n\r\n\r\n\r\n**Technologies**\r\n\r\n\r\n\r\nHTML/CSS, Bootstrap, Javascript and PHP\r\n\r\n\r\n\r\n",
+      "links" : [{"url": "//tecniram.pt", "name" : "Website" ,"type" : "link"}],
+      "thumbnail" : "/images/tecniram-thumbnail.png",
+      "images" : [
+        {"url": "/images/tecniram-home.png", "name":"Homepage"},
+        {"url": "/images/tecniram-company.png", "name":"Company Section"},
+        {"url": "/images/tecniram-services.png", "name":"Services Section"},
+        {"url": "/images/tecniram-contact.png", "name":"Contact Section"}
+      ]
+    },
+    {
+      "name": "MaxAmp",
+      "description": "A front-end prototype of a management system for the project of Requirements Engineering course.\r\n\r\n\r\n\r\n(Academic Project)\r\n\r\n\r\n\r\n**Technologies**\r\n\r\n\r\n\r\nBootstrap and jQuery\r\n\r\n\r\n\r\n",
+      "links" : [{"url": "//maxamp.diogopassos.pt", "name" : "Website" ,"type" : "link"},{"url": "//github.com/gngz/ERProj-MaxAmp", "name" : "GitHub Repository" ,"type" : "github"}],
+      "thumbnail" : "/images/maxamp-thumbnail.png",
+      "images" : [
+        {"url": "/images/maxamp-homepage.jpg", "name":"Homepage"},
+        {"url": "/images/maxamp-features.png", "name":"Features Page"},
+        {"url": "/images/maxamp-contact.png", "name":"Contact Page"},
+        {"url": "/images/maxamp-dashboard-produtor.png", "name":"Producer Dashboard"},
+        {"url": "/images/maxamp-dashboard-tecnico.png", "name":"Technician Dashboard"},
+        {"url": "/images/maxamp-dashboard-admin.png", "name":"Administrator Dashboard"}
+      ]
+    },
+    {
+      "name": "Restructuring of CLIMA-Madeira Observatory Platform",
+      "description": "Academic Project in the scope of the license degree final project.\r\n\r\n\r\n\r\nIt consisted in the development of a platform, migrating the content and its structure from the old platform, and in the development of a mapping component.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n###### Technologies\r\n\r\n\r\n\r\nWordPress, PHP, jQuery and Leaflet.",
+      "images" : [
+        {"url": "/images/clima-homepage.png", "name":"Homepage"},
+        {"url": "/images/clima-enquadramento.png", "name":"About Page"},
+        {"url": "/images/clima-cartografia.png", "name":"Cartography Page"}
+      ],
+      "links" : [{"url": "#", "name" : "Webpage of CLIMA-Madeira Observatory (Unavailable)" ,"type" : "link"}]
     }
   ]
 }

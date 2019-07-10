@@ -3,7 +3,7 @@
     <nav id="nav" class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <!-- navbar items, navbar burger... -->
-        <a class="navbar-item" href="#">PORTFÓLIO {{ selected_lang }}</a>
+        <router-link to="/" class="navbar-item">PORTFÓLIO</router-link>
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -19,7 +19,7 @@
       </div>
     </nav>
     <div class="main-container">
-      <router-view/>
+      <router-view :key="$route.params.lang"></router-view>
     </div>
     <footer>
       <p> Made with <i class="fas fa-heart"></i> by <a href="//diogopassos.pt">DiogoPassos.pt</a></p>
@@ -30,10 +30,10 @@
 
 <script>
 
-import Projects from '@/services/projects'
+import projects from '@/services/projects'
 import router from './router'
 
-var projects = new Projects();
+
 
 
 
@@ -47,8 +47,9 @@ export default {
   methods: {
     setLang : function (lang) {
       this.selected_lang = lang;
-      console.log("newlang", lang)
-      router.push('/')
+      //console.log("newlang", lang)
+
+      router.push({ params: { 'lang'  : lang } })
     }
   },
   created: function () {
